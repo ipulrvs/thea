@@ -1,0 +1,43 @@
+
+<div>
+    <h2><span data-translate="monolithApp.todoItem.detail.title">Todo Item</span> {{vm.todoItem.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="monolithApp.todoItem.name">Name</span></dt>
+        <dd>
+            <span>{{vm.todoItem.name}}</span>
+        </dd>
+        <dt><span data-translate="monolithApp.todoItem.status">Status</span></dt>
+        <dd>
+            <span>{{vm.todoItem.status}}</span>
+        </dd>
+        <dt><span data-translate="monolithApp.todoItem.description">Description</span></dt>
+        <dd>
+            <span>{{vm.todoItem.description}}</span>
+        </dd>
+        <dt><span data-translate="monolithApp.todoItem.cost">Cost</span></dt>
+        <dd>
+            <span>{{vm.todoItem.cost}}</span>
+        </dd>
+        <dt><span data-translate="monolithApp.todoItem.endDate">End Date</span></dt>
+        <dd>
+            <span>{{vm.todoItem.endDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="monolithApp.todoItem.todo">Todo</span></dt>
+        <dd>
+            <a ui-sref="todo-detail({id:vm.todoItem.todo.id})">{{vm.todoItem.todo.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="todo-item-detail.edit({id:vm.todoItem.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>
